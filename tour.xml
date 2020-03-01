@@ -1,0 +1,603 @@
+﻿<krpano version="1.19" 
+	title="">
+
+	<include url="skin/vtourskin.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false" 
+		maps_type="google" 
+		maps_bing_api_key="" 
+		maps_google_api_key="" 
+		maps_zoombuttons="false" 
+		gyro="true" 
+		webvr="true" 
+		webvr_gyro_keeplookingdirection="false" 
+		webvr_prev_next_hotspots="true" 
+		littleplanetintro="false" 
+		title="true" 
+		thumbs="true" 
+		thumbs_width="100" 
+		thumbs_height="60" 
+		thumbs_padding="10" 
+		thumbs_crop="0|40|240|160" 
+		thumbs_opened="false" 
+		thumbs_text="false" 
+		thumbs_dragging="true" 
+		thumbs_onhoverscrolling="false" 
+		thumbs_scrollbuttons="false" 
+		thumbs_scrollindicator="false" 
+		thumbs_loop="false" 
+		tooltips_buttons="false" 
+		tooltips_thumbs="false" 
+		tooltips_hotspots="true" 
+		tooltips_mapspots="false" 
+		deeplinking="false" 
+		loadscene_flags="MERGE" 
+		loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)" 
+		loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)" 
+		loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)" 
+		loadingtext="loading..." 
+		layout_width="100%" 
+		layout_maxwidth="814" 
+		controlbar_width="-24" 
+		controlbar_height="40" 
+		controlbar_offset="20" 
+		controlbar_offset_closed="-40" 
+		controlbar_overlap.no-fractionalscaling="10" 
+		controlbar_overlap.fractionalscaling="0" 
+		design_skin_images="vtourskin.png" 
+		design_bgcolor="0x2D3E50" 
+		design_bgalpha="0.8" 
+		design_bgborder="0" 
+		design_bgroundedge="1" 
+		design_bgshadow="0 4 10 0x000000 0.3" 
+		design_thumbborder_bgborder="3 0xFFFFFF 1.0" 
+		design_thumbborder_padding="2" 
+		design_thumbborder_bgroundedge="0" 
+		design_text_css="color:#FFFFFF; font-family:Arial;" 
+		design_text_shadow="1" />
+
+
+<!-- LOGO PLUGIN -->
+<plugin name="logo"
+	        url="skin/logo.png"
+			onclick="openurl('https://www.grupochacarillasur.com/galvezbarrenechea935',_blank);"
+	        keep="true"
+	        enabled="true"
+	        align="leftbottom"
+	        x="15" y="60"
+			scale="0.5"
+	        scale.mobile="0.25"
+	        />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	 <include url="skin/vtourskin_chacarilla_sur.xml" /> 
+
+	 <!-- <include url="skin/vtourskin_design_flat_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml" /> -->
+
+	<autorotate enabled="false" 
+		waittime="1.5" 
+		speed="5.0" />
+	<!-- startup action - load the first scene -->
+	<action name="startup" 
+		autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		autorotate.start();
+
+	</action>
+
+
+
+	<scene name="scene_HALL_1" 
+		title="Hall" 
+		onstart="" 
+		thumburl="panos/HALL_1.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.000" 
+			vlookat="0.000" 
+			fovtype="MFOV" 
+			fov="95" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/HALL_1.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/HALL_1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/HALL_1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="-17" 
+			atv="0" 
+			linkedscene="scene_hall_estar" />
+
+
+	</scene>
+
+	<scene name="scene_HALL_2" 
+		title="Hall 2" 
+		onstart="" 
+		thumburl="panos/HALL_2.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/HALL_2.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/HALL_2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/HALL_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+	</scene>
+
+	<scene name="scene_HALL_ESTAR" 
+		title="Pasadizo" 
+		onstart="" 
+		thumburl="panos/HALL_ESTAR.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/HALL_ESTAR.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/HALL_ESTAR.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/HALL_ESTAR.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="-20" 
+			atv="25" 
+			linkedscene="scene_sala_comedor_360" />
+		<hotspot name="spot2" 
+			style="skin_hotspotstyle" 
+			ath="136.690" 
+			atv="0" 
+			linkedscene="scene_estar_360" />
+		<hotspot name="spot3" 
+			style="skin_hotspotstyle" 
+			ath="-113.828" 
+			atv="0" 
+			linkedscene="scene_cocina_360" />
+		<hotspot name="spot4" 
+			style="skin_hotspotstyle" 
+			ath="53.116" 
+			atv="0" 
+			linkedscene="scene_ba__o_de_visita_360" />
+		<hotspot name="spot5" 
+			style="skin_hotspotstyle" 
+			ath="16.281" 
+			atv="0" 
+			linkedscene="scene_hall_1" />
+
+	</scene>
+
+	<scene name="scene_BA__O_DE_VISITA_360" 
+		title="Baño de visita" 
+		onstart="" 
+		thumburl="panos/BA__O_DE_VISITA_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/BA__O_DE_VISITA_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/BA__O_DE_VISITA_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/BA__O_DE_VISITA_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="76.479" 
+			atv="0" 
+			linkedscene="scene_hall_estar" />
+
+	</scene>
+	<scene name="scene_ESTAR_360" 
+		title="Sala estar" 
+		onstart="" 
+		thumburl="panos/ESTAR_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/ESTAR_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/ESTAR_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/ESTAR_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="120" 
+			atv="20" 
+			linkedscene="scene_HALL_ESTAR" />
+		<hotspot name="spot2" 
+			style="skin_hotspotstyle" 
+			ath="-139.460" 
+			atv="0" 
+			linkedscene="scene_dormitorio_principal_360" />
+		<hotspot name="spot3" 
+			style="skin_hotspotstyle" 
+			ath="113.935" 
+			atv="0" 
+			linkedscene="scene_cocina_360" />
+		<hotspot name="spot4" 
+			style="skin_hotspotstyle" 
+			ath="-75.281" 
+			atv="0" 
+			linkedscene="scene_dormitorio_secundario_360" />
+		<hotspot name="spot5" 
+			style="hotspot_dormitorio_terciario" 
+			ath="-49.930" 
+			atv="0"  />
+		<hotspot name="spot6" 
+			style="skin_hotspotstyle" 
+			ath="-29.628" 
+			atv="0" 
+			linkedscene="scene_BA__O_SECUNDARIO_360" />
+
+
+	</scene>
+
+
+	<scene name="scene_SALA_COMEDOR_360" 
+		title="Sala comedor" 
+		onstart="" 
+		thumburl="panos/SALA_COMEDOR_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/SALA_COMEDOR_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/SALA_COMEDOR_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/SALA_COMEDOR_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="113.830" 
+			atv="20" 
+			linkedscene="scene_hall_estar" />
+		<hotspot name="spot2" 
+			style="skin_hotspotstyle" 
+			ath="94.184" 
+			atv="5.185" 
+			linkedscene="scene_hall_1" />
+			<hotspot name="spot3" 
+			style="skin_hotspotstyle" 
+			ath="115" 
+			atv="0" 
+			linkedscene="scene_BA__O_DE_VISITA_360" />
+
+	</scene>
+
+	<scene name="scene_BA__O_PRINCIPAL_360" 
+		onstart="" 
+		title="Baño principal" 
+		thumburl="panos/BA__O_PRINCIPAL_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/BA__O_PRINCIPAL_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/BA__O_PRINCIPAL_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/BA__O_PRINCIPAL_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="146.043" 
+			atv="10.349" 
+			linkedscene="scene_dormitorio_principal_360" />
+
+	</scene>
+
+	<scene name="scene_BA__O_SECUNDARIO_360" 
+		title="Baño secundario" 
+		onstart="" 
+		thumburl="panos/BA__O_SECUNDARIO_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/BA__O_SECUNDARIO_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/BA__O_SECUNDARIO_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/BA__O_SECUNDARIO_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="-97" 
+			atv="0" 
+			linkedscene="scene_ESTAR_360" />
+	</scene>
+
+	<scene name="scene_COCINA_360" 
+		title="Cocina" 
+		onstart="" 
+		thumburl="panos/COCINA_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/COCINA_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/COCINA_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/COCINA_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="149.907" 
+			atv="0" 
+			linkedscene="scene_hall_estar" />
+	<hotspot name="spot2" 
+			style="hotspot_lavadora" 
+			ath="275" 
+			atv="0"  />
+	</scene>
+
+	<scene name="scene_DORMITORIO_PRINCIPAL_360" 
+		title="Dormitorio principal" 
+		onstart="" 
+		thumburl="panos/DORMITORIO_PRINCIPAL_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/DORMITORIO_PRINCIPAL_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/DORMITORIO_PRINCIPAL_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/DORMITORIO_PRINCIPAL_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="37.060" 
+			atv="6.253" 
+			linkedscene="scene_ba__o_principal_360" />
+		<hotspot name="spot2" 
+			style="skin_hotspotstyle" 
+			ath="99.295" 
+			atv="4.688" 
+			linkedscene="scene_estar_360" />
+		<hotspot name="spot3" 
+			style="hotspot_closet" 
+			ath="-129.525" 
+			atv="8.384"  />
+
+	</scene>
+
+	<scene name="scene_DORMITORIO_SECUNDARIO_360" 
+		title="Dormitorio secundario" 
+		onstart="" 
+		thumburl="panos/DORMITORIO_SECUNDARIO_360.tiles/thumb.jpg" 
+		lat="" 
+		lng="" 
+		heading="">
+
+		<view hlookat="0.0" 
+			vlookat="0.0" 
+			fovtype="MFOV" 
+			fov="100" 
+			maxpixelzoom="2.0" 
+			fovmin="90" 
+			fovmax="110" 
+			limitview="auto" />
+
+		<preview url="panos/DORMITORIO_SECUNDARIO_360.tiles/preview.jpg" />
+
+		<image type="CUBE" 
+			multires="true" 
+			tilesize="512">
+			<level tiledimagewidth="1792" 
+				tiledimageheight="1792">
+				<cube url="panos/DORMITORIO_SECUNDARIO_360.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" 
+				tiledimageheight="1024">
+				<cube url="panos/DORMITORIO_SECUNDARIO_360.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" 
+			style="skin_hotspotstyle" 
+			ath="143.219" 
+			atv="-0.426" 
+			linkedscene="scene_estar_360" />
+
+	</scene>
+
+
+
+		<social share="txtadd(urltext,get(social.%1),%2);openurl(get(urltext),_blank);"
+        facebook="http://facebook.com/share.php?u="
+        twitter="http://twitter.com/intent/tweet?status="
+        googleplus="https://plus.google.com/share?url="
+        vkontakte="http://vkontakte.ru/share.php?url="
+        odnoklassniki="http://www.odnoklassniki.ru/dk?st.cmd=addShare&amp;st.s=1&amp;st._surl="
+/>
+
+</krpano>
